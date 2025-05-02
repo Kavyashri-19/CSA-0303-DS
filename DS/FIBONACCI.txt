@@ -1,0 +1,51 @@
+//FIBONACCI WITHOUT RECURSION
+#include<stdio.h>
+int main()
+{
+    int a=0,b=1,i,n,sum=0;
+    printf("Enter the number of terms: ");
+    scanf("%d",&n);
+    printf("Fibonacci Series:");
+    for(i=0 ; i<n ; i++)
+    {
+        if(i <= 1)
+        {
+            sum=i;
+        }
+        else
+        {
+            sum=a+b;
+            a=b;
+            b=sum;
+        }
+        printf(" %d",sum);
+    }
+    return 0;
+}
+
+#FIBONACCI USING RECURSION
+#include <stdio.h>
+int fib(int n) {
+  if (n <= 1)
+  {
+    return n;
+  }
+  else
+  {
+    return fib(n - 1) + fib(n - 2);
+  }
+}
+
+int main()
+{
+  int n, i;
+  printf("Enter the number of terms: ");
+  scanf("%d", &n);
+  printf("Fibonacci Series: ");
+  for (i = 0; i < n; i++)
+  {
+    printf("%d ", fib(i));
+  }
+  printf("\n");
+  return 0;
+}

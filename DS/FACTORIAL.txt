@@ -1,0 +1,20 @@
+#include <stdio.h>
+int factr(int n) {
+    if (n == 0)
+        return 1;
+    return n * factr(n - 1);
+}
+int facti(int n) {
+    int fact = 1;
+    for (int i = 1; i <= n; i++)
+        fact *= i;
+    return fact;
+}
+int main() {
+    int num;
+    printf("Enter a number to find its factorial: ");
+    scanf("%d", &num);
+    printf("Factorial using recursion: %d\n", factr(num));
+    printf("Factorial without recursion: %d\n", facti(num));
+    return 0;
+}
