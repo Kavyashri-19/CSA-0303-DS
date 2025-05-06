@@ -1,9 +1,3 @@
-ALGORITHM:
-1. Initialize stack with a maximum size.
-2. PUSH: Check if the stack is full. If not, insert element at top.
-3. POP: Check if the stack is empty. If not, remove the top element.
-4. PEEK: Return the top element without removing it.
-C Program:
 #include <stdio.h>
 #define SIZE 5
 int stack[SIZE], top = -1;
@@ -45,4 +39,3 @@ int main() {
     display();
     return 0;
 }
-
