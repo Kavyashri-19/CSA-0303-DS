@@ -5,13 +5,13 @@ struct Node
     int data;
     struct Node* next;
 };
-void insertAtBeginning(struct Node** head, int newData) 
+void insert(struct Node** head, int newData) 
 {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));    newNode->data = newData;
     newNode->next = *head;
     *head = newNode;
 }
-void deleteFromBeginning(struct Node** head)
+void deleteL(struct Node** head)
 {
     if (*head == NULL)
     {
@@ -23,7 +23,7 @@ void deleteFromBeginning(struct Node** head)
     free(temp);
     printf("Node deleted from beginning.\n");
 }
-void displayList(struct Node* head)
+void display(struct Node* head)
 {
     if (head == NULL)
     {
@@ -42,11 +42,16 @@ void displayList(struct Node* head)
 int main()
 {
     struct Node* head = NULL;
-    insertAtBeginning(&head, 10);
-    insertAtBeginning(&head, 20);
-    insertAtBeginning(&head, 30);
-    displayList(head);
-    deleteFromBeginning(&head);
-    displayList(head);
+    insert(&head, 10);
+    insert(&head, 20);
+    insert(&head, 30);
+    display(head);
+    deleteL(&head);
+    display(head);
     return 0;
 }
+
+OUTPUT:
+Linked List: 30 -> 20 -> 10 -> NULL
+Node deleted from beginning.
+Linked List: 20 -> 10 -> NULL
